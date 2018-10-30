@@ -1,0 +1,120 @@
+/*** Pages basic layout ***/
+
+.page {
+  font-family: $body;
+  background: white;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: auto;
+  text-align: center;
+
+  @include bp(medium) {
+		width: 75vw;
+	}
+
+  &__header {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    background: $secondary;
+    text-align: center;
+
+    &__container {
+      padding: 2em 1em;
+      margin: 0 auto;
+      max-width: 500px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    z-index: 99;
+    bottom: -0.5em;
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    line-height: 1.4;
+    padding-top: 0.5em;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    color: darken($secondary, 50%);
+  }
+
+  //Link on bottom of every page
+  &__link {
+  font-family: $code;
+  font-size: 14px;
+  text-decoration: none;
+  color: $highlight;
+  color: $white;
+  background: $highlight;
+  border-radius: 2em;
+  padding: 1em 2em;
+  position: absolute;
+  bottom: 4em;
+  right: 4em;
+  box-shadow: 1px 4px 12px rgba($base, .2)
+}
+
+}
+
+.btn--header--active .page__subtitle {
+  opacity: 1;
+  max-height: 100px;
+  height: auto;
+  transform: translateY(0);
+}
+
+// Expanding Button
+.btn--header {
+  position: absolute;
+  margin: 0 auto;
+  display: inline-block;
+  background: darken($secondary, 15%);
+  width: 39px;
+  height: 39px;
+  bottom: -18px;
+  margin-left: -21px;
+  border-radius: 50%;
+
+  span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 12px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: 7px;
+      display: block;
+      background: white;
+      width: 2px;
+      height: 16px;
+    }
+  }
+}
+
+.no-touchevents .btn--header:hover {
+  opacity: 0.75;
+}
+
+.btn--header--active .btn--header {
+  transform: rotate(45deg);
+}
+
+
+.no-touchevents .page__link:hover {
+  opacity: 0.75;
+}
