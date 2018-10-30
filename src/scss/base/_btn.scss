@@ -1,0 +1,18 @@
+/*** BASIC BUTTONS ***/
+
+button {
+	border: none;
+	appearance: none;
+	background: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: 0;
+	}
+}

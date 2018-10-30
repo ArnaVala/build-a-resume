@@ -1,0 +1,9 @@
+/*** MAIN ***/
+
+#app {
+	position: relative;
+	margin: 0;
+	width: 100%;
+
+	@extend %clearfix;
+}

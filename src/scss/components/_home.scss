@@ -1,0 +1,63 @@
+/*** HOME COMPONENT ***/
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-color: $base;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include bp(medium) {
+    padding: 0 2em;
+  }
+
+  &__text {
+		max-width: 90vw;
+		width: 900px;
+    z-index: 3;
+
+    &__title {
+      font-family: $body;
+      font-size: calc(2em + 2vw);
+      margin: 0 0 1em 0;
+      line-height: 1.5;
+      color: white;
+
+    }
+  }
+}
+
+
+// Buttons
+
+.btn {
+	font-family: "Fira mono", monospace;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 1em 3em;
+	border-radius: 3em;
+	box-shadow: 2px 4px 3px rgba($black, 0.3);
+}
+.btn--more {
+  background: $white;
+  color: $base;
+  margin-right: 2em;
+  text-decoration: none;
+}
+
+.no-touchevents .btn--more:hover {
+  background: rgba(355, 355, 355, 0.75);
+}
+
+.btn--start {
+  background: $highlight;
+  color: white;
+  text-decoration: none;
+}
+
+.no-touchevents .btn--start:hover {
+  background: rgba($highlight, 0.75);
+}
