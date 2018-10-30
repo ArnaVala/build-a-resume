@@ -1,12 +1,15 @@
 {
   "name": "build-a-resume",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Arna Vala <arnavala@gmail.com>",
   "private": true,
   "dependencies": {
     "ajv": "^6.5.4",
     "node-sass": "^4.9.4",
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5"
   },
   "scripts": {
