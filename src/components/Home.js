@@ -7,7 +7,7 @@ function Home() {
       <section className="home">
         <div className="home__text">
           <h2 className="home__text__title">Resume Builder</h2>
-          <Link to="/" className="btn btn--more">
+          <Link to="/about" className="btn btn--more">
             Learn More
           </Link>
           <Link to="/" className="btn btn--start">
