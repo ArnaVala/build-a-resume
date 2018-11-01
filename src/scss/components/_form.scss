@@ -1,0 +1,79 @@
+/**** FORM ****/
+
+.fieldset {
+	margin: 4em auto;
+	padding: 2em 1em;
+  width: 720px;
+  max-width: 90%;
+  text-align: center;
+  
+	@include bp(medium) {
+    padding: 2em 0;
+	}
+}
+
+.input,
+.select,
+.textarea {
+	padding: 1em;
+  font-size: 14px;
+	border-radius: 2px;
+	border: none;
+	appearance: none;
+	resize: none;
+	outline: none;
+  background: $secondary;
+  color: $grey; 
+}
+
+.input,
+.select {
+	margin-bottom: 1.5em;
+  width: 100%;
+
+	@include bp(medium) {
+    width: calc(50% - 1em);
+    justify-content: space-between;
+    
+  }
+}
+
+.textarea {
+	overflow: hidden;
+	line-height: 1.4;
+	font-size: 1em;
+	margin-bottom: 1em;
+}
+
+.select {
+	background: $secondary;
+}
+
+.select-disabled {
+	color: $darkgrey;
+}
+
+.ol li {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+	margin-bottom: 1.5em;
+
+	&:hover .btn--remove {
+		opacity: 1;
+	}
+}
+
+// Applicant Page
+.input--full-name {
+  padding-right: 3em;
+  width: 100%;
+}
+
+.touch .input--full-name {
+	padding-right: 3em;
+}
+
+

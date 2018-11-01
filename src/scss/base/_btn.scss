@@ -16,3 +16,130 @@ button {
 		outline: 0;
 	}
 }
+
+// Buttons - home and layout
+
+.btn {
+	font-family: "Fira mono", monospace;
+	font-size: 14px;
+	font-weight: 400;
+	
+}
+.btn--more {
+  background: $white;
+  color: $base;
+  margin-right: 2em;
+	text-decoration: none;
+	padding: 1em 3em;
+	border-radius: 3em;
+	box-shadow: 2px 4px 3px rgba($black, 0.3);
+}
+
+.no-touchevents .btn--more:hover {
+  background: rgba($white, 0.8);
+}
+
+.btn--start {
+  background: $highlight;
+  color: white;
+	text-decoration: none;
+	padding: 1em 3em;
+	border-radius: 3em;
+	box-shadow: 2px 4px 3px rgba($black, 0.3);
+}
+
+.no-touchevents .btn--start:hover {
+  background: rgba($highlight, 0.8);
+}
+
+
+// Buttons for form
+.btn--add {
+	display: inline-block;
+	float: left;
+	color: $highlight;
+	border-bottom: 2px solid $highlight;
+	margin-bottom: 2em;
+}
+
+.no-touchevents .btn--add:hover {
+	opacity: .8;
+}
+
+.btn--remove {
+	display: inline-block;
+	position: absolute;
+	top: 4px;
+	right: 0;
+	transform: rotate(45deg);
+	width: 36px;
+	height: 36px;
+	margin-left: -18px;
+	border-radius: 50%;
+	opacity: 1;
+
+	span {
+		display: block;
+		width: 16px;
+		height: 3px;
+		background: $highlight;
+		position: relative;
+		left: 10px;
+
+		&:after {
+			content: '';
+			position: relative;
+			top: -7px;
+			left: 7px;
+			display: block;
+			background: $highlight;
+			width: 3px;
+			height: 16px;
+		}
+	}
+}
+
+.touchevents .btn--remove {
+	opacity: 1;
+}
+
+// Expanding Button
+.btn--header {
+  position: absolute;
+  margin: 0 auto;
+  display: inline-block;
+  background: darken($secondary, 15%);
+  width: 39px;
+  height: 39px;
+  bottom: -18px;
+  margin-left: -21px;
+  border-radius: 50%;
+
+  span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 12px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -7px;
+      left: 7px;
+      display: block;
+      background: white;
+      width: 2px;
+      height: 16px;
+    }
+  }
+}
+
+.no-touchevents .btn--header:hover {
+  opacity: 0.75;
+}
+
+.btn--header--active .btn--header {
+  transform: rotate(45deg);
+}

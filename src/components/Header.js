@@ -15,7 +15,7 @@ function Header({ toggleMenu, closeMenu }) {
         <ul>
           <Link to="/" className="logo" onClick={closeMenu}>
             <h1>
-              <div>Resume Builder</div>
+              <div>Renters Resume</div>
             </h1>
           </Link>
           <li>
@@ -45,25 +45,25 @@ function Header({ toggleMenu, closeMenu }) {
           <li>
             <NavLink
               to="/"
-              title="Experience"
+              title="Employment"
               className="btn--nav"
               activeClassName="btn--nav--active"
               onClick={closeMenu}
             >
               <span className="btn--nav__lines" />
-              Experience
+              Employment History
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/"
-              title="Education"
+              title="Rental"
               className="btn--nav"
               activeClassName="btn--nav--active"
               onClick={closeMenu}
             >
               <span className="btn--nav__lines" />
-              Education
+              Rental History
             </NavLink>
           </li>
           <li>
@@ -75,7 +75,7 @@ function Header({ toggleMenu, closeMenu }) {
               onClick={closeMenu}
             >
               <span className="btn--nav__lines" />
-              Assets
+              Income
             </NavLink>
           </li>
         </ul>

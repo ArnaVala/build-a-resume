@@ -5,20 +5,19 @@
 @import "variables";
 
 // Base
+@import "./base/btn";
+@import "./base/images";
 @import "./base/main";
 @import "./base/typography";
-@import "./base/images";
-@import "./base/links";
-@import "./base/btn";
-
 
 // Global.
-@import "./global/reset";
 @import "./global/clearfix";
+@import "./global/reset";
 @import "./global/responsive";
 
 // Components.
 @import "./components/about";
+@import "./components/form";
 @import "./components/header";
 @import "./components/home";
 @import "./components/page";

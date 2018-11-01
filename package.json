@@ -1,5 +1,5 @@
 {
-  "name": "build-a-resume",
+  "name": "renters-resume",
   "version": "1.0.0",
   "author": "Arna Vala <arnavala@gmail.com>",
   "private": true,
@@ -8,11 +8,14 @@
     "classnames": "^2.2.6",
     "lodash": "^4.17.11",
     "node-sass": "^4.9.4",
+    "prettier": "^1.14.3",
     "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "store2": "^2.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

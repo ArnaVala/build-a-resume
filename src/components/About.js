@@ -10,15 +10,15 @@ function About() {
       </div>
       <ul className="faq">
         <li>
-          <span className="faq__question">What is Resume Builder?</span>
+          <span className="faq__question">What is Renters Resume?</span>
           <p>
-          This site is still being developed. It is made as a proof of concept by  {" "} <Link to="https://github.com/arnavala/" target="_blank" rel="noopener noreferrer">
-              Arna Vala
+          This is a simple SPA made in React. Renters Resume is a personal project made as proof of concept and for learning purposes. Landing page illustration and built by {" "} <Link to="https://github.com/arnavala/" target="_blank" rel="noopener noreferrer">
+              Arna Vala.
             </Link>
           </p>
         </li>
 
-        <Link to="/" title="Applicant" className="page__link page__link--about">
+        <Link to="/applicant" title="Applicant" className="page__link page__link--about">
           Get Started
         </Link>
       </ul>

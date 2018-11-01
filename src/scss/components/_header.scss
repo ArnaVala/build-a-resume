@@ -1,12 +1,12 @@
 /*** NAV - HEADER ***/
 
 .header {
-  background: $white;
+  font-family: $body;
+  background: $secondary;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 999;
-  border-bottom: 1px solid $highlight;
 
   @include bp(medium) {
     border: 0;
@@ -19,7 +19,6 @@
   width: 300px;
   transform: translate3d(-300px, 0, 0);
   position: fixed;
-  left: 0;
   top: 0;
   bottom: 0;
   background: $base;
@@ -150,8 +149,6 @@
   transform: rotate(-45deg);
 }
 
-
-
 // Navigation links
 .btn--nav {
   color: rgba($white, 0.3);
@@ -188,13 +185,11 @@
     }
 
     &--last {
-    &:after {
-      display: none;
+      &:after {
+        display: none;
+      }
     }
   }
-  }
-
-  
 }
 
 .btn--preview {

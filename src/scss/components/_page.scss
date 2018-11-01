@@ -12,8 +12,8 @@
   text-align: center;
 
   @include bp(medium) {
-		width: 75vw;
-	}
+    width: 75vw;
+  }
 
   &__header {
     position: relative;
@@ -28,6 +28,10 @@
       max-width: 500px;
       text-align: center;
     }
+
+    @include bp(medium) {
+      margin-top: 0;
+    }
   }
 
   &__title {
@@ -41,7 +45,7 @@
 
   &__subtitle {
     line-height: 1.4;
-    padding-top: 0.5em;
+    padding-top: 1.5em;
     max-height: 0;
     opacity: 0;
     transform: translateY(20px);
@@ -50,20 +54,19 @@
 
   //Link on bottom of every page
   &__link {
-  font-family: $code;
-  font-size: 14px;
-  text-decoration: none;
-  color: $highlight;
-  color: $white;
-  background: $highlight;
-  border-radius: 2em;
-  padding: 1em 2em;
-  position: absolute;
-  bottom: 4em;
-  right: 4em;
-  box-shadow: 1px 4px 12px rgba($base, .2)
-}
-
+    font-family: $code;
+    font-size: 14px;
+    text-decoration: none;
+    color: $highlight;
+    color: $white;
+    background: $highlight;
+    border-radius: 2em;
+    padding: 1em 2em;
+    position: absolute;
+    bottom: 4em;
+    right: 4em;
+    box-shadow: 1px 4px 12px rgba($base, 0.2);
+  }
 }
 
 .btn--header--active .page__subtitle {
@@ -73,46 +76,6 @@
   transform: translateY(0);
 }
 
-// Expanding Button
-.btn--header {
-  position: absolute;
-  margin: 0 auto;
-  display: inline-block;
-  background: darken($secondary, 15%);
-  width: 39px;
-  height: 39px;
-  bottom: -18px;
-  margin-left: -21px;
-  border-radius: 50%;
-
-  span {
-    display: block;
-    width: 16px;
-    height: 2px;
-    background: white;
-    position: absolute;
-    left: 12px;
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -7px;
-      left: 7px;
-      display: block;
-      background: white;
-      width: 2px;
-      height: 16px;
-    }
-  }
-}
-
-.no-touchevents .btn--header:hover {
-  opacity: 0.75;
-}
-
-.btn--header--active .btn--header {
-  transform: rotate(45deg);
-}
 
 
 .no-touchevents .page__link:hover {
