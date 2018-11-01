@@ -145,26 +145,31 @@ button {
 }
 
 //Preview button nav
-.btn--preview {
-	float: left;
+
+.btn--preview,
+.btn--print--preview {
+	font-family: $code;
+	font-size: 14px;
 	position: relative;
 	display: flex;
 	align-items: center;
-	top: 1.5em;
-	right: 1em;
-	padding: .25em 1em;
-	background: white;
-	color: $base;
-	fill: $base;
+	justify-content: center;
 	border-radius: 2em;
-	margin-right: .5em;
-	margin-bottom: 1em;
+	min-height: 36px;
 
 	svg {
 		width: 16px;
 		height: 16px;
-		margin-right: 6px;
+		margin-right: 8px;
 	}
+}
+
+.btn--preview {
+	background: white;
+	color: $base;
+	fill: $base;
+	padding: 0.5em 0em;
+	width: 130px;
 }
 
 .btn--preview.btn--nav--active {
@@ -173,18 +178,9 @@ button {
 
 //Print preview button / Preview page
 .btn--print--preview {
-  display: flex;
-  align-items: center;
-  background: $highlight;
+	background: $highlight;
   color: $white;
   fill: $white;
-  padding: 0.25em 1em;
-  border-radius: 2em;
-  margin: 0 0 2em 0;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-  }
+	margin: 0 0 2em 0;
+	width: 110px;
 }

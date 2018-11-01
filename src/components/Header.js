@@ -44,8 +44,8 @@ function Header({ toggleMenu, closeMenu }) {
           </li>
           <li>
             <NavLink
-              to="/"
-              title="Employment"
+              to="/employmenthistory"
+              title="Employment History"
               className="btn--nav"
               activeClassName="btn--nav--active"
               onClick={closeMenu}
@@ -69,13 +69,25 @@ function Header({ toggleMenu, closeMenu }) {
           <li>
             <NavLink
               to="/"
-              title="Assets"
+              title="Income"
               className="btn--nav"
               activeClassName="btn--nav--active"
               onClick={closeMenu}
             >
               <span className="btn--nav__lines" />
               Income
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/"
+              title="References"
+              className="btn--nav"
+              activeClassName="btn--nav--active"
+              onClick={closeMenu}
+            >
+              <span className="btn--nav__lines btn--nav__lines--last" />
+              References
             </NavLink>
           </li>
           <li>

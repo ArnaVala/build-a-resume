@@ -7,6 +7,7 @@ import { tryParseJSON } from "../util/helpers";
 
 import About from "./About";
 import Applicant from "./Applicant";
+import EmploymentHistory from "./EmploymentHistory";
 import Header from "./Header";
 import Home from "./Home";
 import Preview from "./Preview";
@@ -23,6 +24,14 @@ const defaultState = {
     }
   ],
   summary: "",
+  employmentHistory: [
+    {
+      company: "",
+      title: "",
+      startDate: "",
+      endDate: ""
+    }
+  ]
 };
 
 class App extends Component {
@@ -131,11 +140,22 @@ class App extends Component {
               toggleHeader={this.toggleHeader}
             />
           </Route>
+          <Route path="/employmenthistory">
+            <EmploymentHistory
+              {...this.props}
+              employmentHistory={this.state.employmentHistory}
+              onInputChange={this.onInputChange}
+              onAddSection={this.onAddSection}
+              onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
+          </Route>
           <Route path="/preview">
             <Preview
               {...this.props}
               people={this.state.people}
               summary={this.state.summary}
+              employmentHistory={this.state.employmentHistory}
               toggleHeader={this.toggleHeader}    
             />
           </Route>

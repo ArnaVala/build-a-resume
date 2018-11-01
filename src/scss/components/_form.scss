@@ -83,3 +83,23 @@
 	padding: 1.5em ;
 }
 
+// Employment page
+
+.input--title {
+	width: 100%;
+
+	padding-right: 3em;
+
+	@include bp(medium) {
+		padding-right: .5em;
+	}
+}
+
+.input--employer {
+	width: 100%;
+	margin-right: 0;
+}
+
+.touch .input--title {
+	padding-right: 3em;
+}

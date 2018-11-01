@@ -42,6 +42,10 @@
 
   li {
     margin: 0 0 1.5em 1em;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   a {
@@ -194,25 +198,6 @@
   }
 }
 
-.btn--preview {
-  float: left;
-  position: relative;
-  display: flex;
-  align-items: center;
-  top: 1.5em;
-  right: 1em;
-  padding: 0.25em 1em;
-  background: white;
-  color: $base;
-  fill: $base;
-  border-radius: 2em;
-  margin-right: 0.5em;
-  margin-bottom: 1em;
-}
-
-.btn--preview.btn--nav--active {
-  color: $base;
-}
 
 .no-touchevents .nav a:hover {
   opacity: 0.75;

@@ -42,12 +42,39 @@ class Preview extends Component {
     );
   }
 
+  renderEmploymentHistory = employmentHistory => {
+    return (
+      <section className="resume__section resume__section--employment">
+        <h2 className="resume__subtitle">Employment History</h2>
+        <ul className="employment-list">
+          {employmentHistory.map((employment, i) => {
+            if (
+              !employment.title ||
+              !employment.company ||
+              !employment.startDate ||
+              !employment.endDate
+            ) {
+              missingSection("employment-history");
+              return null;
+            }
+
+            return (
+              <li className="job" key={i}>
+                {`${employment.title} at ${employment.company}`}
+                {` (${employment.startDate} - ${employment.endDate})`}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    );
+  };
 
   render() {
-    const {git
-      people,
-      summary,
-    } = this.props;
+    const { people,
+            summary,
+            employmentHistory
+          } = this.props;
     return (
       <section className="page">
         <div className="resume">
@@ -57,7 +84,7 @@ class Preview extends Component {
                 className="btn--print--preview"
                 onClick={this.props.printResume}
               >
-                <svg width="1024" height="1024" viewBox="0 0 1024 1024">
+                <svg width="100" height="100" viewBox="0 0 100 100">
                   <path d="M256 64h512v128h-512v-128z" />
                   <path d="M960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.794 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM128 448c-35.346 0-64-28.654-64-64s28.654-64 64-64 64 28.654 64 64-28.652 64-64 64zM704 896h-384v-320h384v320z" />
                 </svg>
@@ -69,6 +96,8 @@ class Preview extends Component {
             {this.renderHeader(people)}
 
             {this.renderSummarySection(summary)}
+
+            {this.renderEmploymentHistory(employmentHistory)}
 
           </div>
           <section className="resume__section incomplete">
@@ -83,13 +112,16 @@ class Preview extends Component {
                 <Link to="/summary">Summary</Link>
               </li>
               <li className="incomplete__link incomplete__link--employment-history">
-                <Link to="/employment-history">Employment History</Link>
+                <Link to="/employmenthistory">Employment History</Link>
               </li>
               <li className="incomplete__link incomplete__link--rental-history">
-                <Link to="/rental-history">Rental History</Link>
+                <Link to="/rentalhistory">Rental History</Link>
               </li>
               <li className="incomplete__link incomplete__link--income">
                 <Link to="/income">Income</Link>
+              </li>
+              <li className="incomplete__link incomplete__link--references">
+                <Link to="/references">References</Link>
               </li>
             </ul>
           </section>
@@ -102,6 +134,7 @@ class Preview extends Component {
 Preview.propTypes = {
   people: PropTypes.array,
   summary: PropTypes.string,
+  employmentHistory: PropTypes.array,
   printResume: PropTypes.func
 };
 
