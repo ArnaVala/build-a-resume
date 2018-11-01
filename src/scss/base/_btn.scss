@@ -143,3 +143,48 @@ button {
 .btn--header--active .btn--header {
   transform: rotate(45deg);
 }
+
+//Preview button nav
+.btn--preview {
+	float: left;
+	position: relative;
+	display: flex;
+	align-items: center;
+	top: 1.5em;
+	right: 1em;
+	padding: .25em 1em;
+	background: white;
+	color: $base;
+	fill: $base;
+	border-radius: 2em;
+	margin-right: .5em;
+	margin-bottom: 1em;
+
+	svg {
+		width: 16px;
+		height: 16px;
+		margin-right: 6px;
+	}
+}
+
+.btn--preview.btn--nav--active {
+	color: $base;
+}
+
+//Print preview button / Preview page
+.btn--print--preview {
+  display: flex;
+  align-items: center;
+  background: $highlight;
+  color: $white;
+  fill: $white;
+  padding: 0.25em 1em;
+  border-radius: 2em;
+  margin: 0 0 2em 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}

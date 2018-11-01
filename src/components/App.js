@@ -9,6 +9,7 @@ import About from "./About";
 import Applicant from "./Applicant";
 import Header from "./Header";
 import Home from "./Home";
+import Preview from "./Preview";
 import Summary from "./Summary";
 
 
@@ -34,6 +35,10 @@ class App extends Component {
     } else {
       this.state = store.get("data") || defaultState;
     }
+  }
+
+  componentDidMount() {
+    store.set('data', this.state);
   }
 
   onInputChange = (value, key) => {
@@ -74,12 +79,27 @@ class App extends Component {
     app.classList.remove("toggle--active");
   }
 
+  printResume = () => {
+    const app = document.getElementById('app');
+    if (this.props.location.pathname !== '/preview') {
+      this.context.router.push('/preview');
+      setTimeout(() => {
+        app.classList.remove('toggle--active');
+        window.print();
+      }, 500);
+    } else {
+      app.classList.remove('toggle--active');
+      window.print();
+    }
+  };
+
   render() {
     return (
       <div>
         {this.props.location.pathname !== "/" ? (
           <Header
             {...this.props}
+            printResume={this.printResume}
             toggleMenu={this.toggleMenu}
             closeMenu={this.closeMenu}
           />
@@ -109,6 +129,14 @@ class App extends Component {
               summary={this.state.summary}
               onInputChange={this.onInputChange}
               toggleHeader={this.toggleHeader}
+            />
+          </Route>
+          <Route path="/preview">
+            <Preview
+              {...this.props}
+              people={this.state.people}
+              summary={this.state.summary}
+              toggleHeader={this.toggleHeader}    
             />
           </Route>
         </Switch>
