@@ -5,10 +5,13 @@ import cloneDeep from "lodash/cloneDeep";
 import store from "store2";
 import { tryParseJSON } from "../util/helpers";
 
-import Home from "./Home";
-import Header from "./Header";
 import About from "./About";
 import Applicant from "./Applicant";
+import Header from "./Header";
+import Home from "./Home";
+import Summary from "./Summary";
+
+
 
 const defaultState = {
   people: [
@@ -18,6 +21,7 @@ const defaultState = {
       phone: ""
     }
   ],
+  summary: "",
 };
 
 class App extends Component {
@@ -96,6 +100,14 @@ class App extends Component {
               onInputChange={this.onInputChange}
               onAddSection={this.onAddSection}
               onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
+          </Route>
+          <Route path="/summary">
+            <Summary
+              {...this.props}
+              summary={this.state.summary}
+              onInputChange={this.onInputChange}
               toggleHeader={this.toggleHeader}
             />
           </Route>

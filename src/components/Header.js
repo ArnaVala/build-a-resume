@@ -32,7 +32,7 @@ function Header({ toggleMenu, closeMenu }) {
           </li>
           <li>
             <NavLink
-              to="/"
+              to="/summary"
               title="Summary"
               className="btn--nav"
               activeClassName="btn--nav--active"
