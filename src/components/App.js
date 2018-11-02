@@ -10,6 +10,7 @@ import Applicant from "./Applicant";
 import EmploymentHistory from "./EmploymentHistory";
 import Header from "./Header";
 import Home from "./Home";
+import Income from "./Income";
 import Preview from "./Preview";
 import RentalHistory from "./RentalHistory";
 import Summary from "./Summary";
@@ -44,6 +45,7 @@ const defaultState = {
       reason: ""
     }
   ],
+  income: ""
 };
 
 class App extends Component {
@@ -134,6 +136,16 @@ class App extends Component {
           <Route path="/rentalhistory">
             <RentalHistory {...this.props} rentalHistory={this.state.rentalHistory} onInputChange={this.onInputChange} onAddSection={this.onAddSection} onRemoveSection={this.onRemoveSection} toggleHeader={this.toggleHeader} />
           </Route>
+        <Route path="/income">
+          <Income
+            {...this.props}
+            income={this.state.income}
+            onInputChange={this.onInputChange}
+            onAddSection={this.onAddSection}
+            onRemoveSection={this.onRemoveSection}
+            toggleHeader={this.toggleHeader}
+          />
+        </Route>
           <Route path="/preview">
             <Preview {...this.props} people={this.state.people} summary={this.state.summary} employmentHistory={this.state.employmentHistory} rentalHistory={this.state.rentalHistory} toggleHeader={this.toggleHeader} />
           </Route>

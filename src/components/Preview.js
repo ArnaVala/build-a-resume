@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { missingSection } from "../util/helpers";
+import { numberWithCommas } from "../util/helpers";
+
 
 class Preview extends Component {
   renderHeader = people => {
@@ -27,6 +29,20 @@ class Preview extends Component {
       </section>
     );
   };
+
+  renderIncomeSection(income) {
+    if (!income) {
+      missingSection("income");
+      return null;
+    }
+
+    return (
+      <section className="resume__section resume__section--income">
+        <h2 className="resume__subtitle">Income</h2>
+        <p className="applicant-income">${numberWithCommas(income)}</p>
+      </section>
+    );
+  }
 
   renderSummarySection(summary) {
     if (!summary) {
@@ -90,7 +106,9 @@ class Preview extends Component {
 
             return (
               <li className="apartment" key={i}>
-                {`${rental.address1} ${rental.address2}, ${rental.zip} ${rental.city}`}
+                {`${rental.address1} ${rental.address2}, ${rental.zip} ${
+                  rental.city
+                }`}
                 <br />
                 {` (${rental.startDate} - ${rental.endDate})`}
                 <br />
@@ -104,20 +122,12 @@ class Preview extends Component {
   };
 
   render() {
-    const { people,
-            summary,
-            employmentHistory,
-            rentalHistory
-          } = this.props;
-    return (
-      <section className="page">
+    const { people, income, summary, employmentHistory, rentalHistory } = this.props;
+    return <section className="page">
         <div className="resume">
           <div className="resume__container">
             <header className="resume__header">
-              <button
-                className="btn--print--preview"
-                onClick={this.props.printResume}
-              >
+              <button className="btn--print--preview" onClick={this.props.printResume}>
                 <svg width="1024" height="1024" viewBox="0 0 1024 1024">
                   <path d="M256 64h512v128h-512v-128z" />
                   <path d="M960 256h-896c-35.2 0-64 28.8-64 64v320c0 35.2 28.794 64 64 64h192v256h512v-256h192c35.2 0 64-28.8 64-64v-320c0-35.2-28.8-64-64-64zM128 448c-35.346 0-64-28.654-64-64s28.654-64 64-64 64 28.654 64 64-28.652 64-64 64zM704 896h-384v-320h384v320z" />
@@ -129,12 +139,13 @@ class Preview extends Component {
 
             {this.renderHeader(people)}
 
+            {this.renderIncomeSection(income)}
+
             {this.renderSummarySection(summary)}
 
             {this.renderEmploymentHistory(employmentHistory)}
 
             {this.renderRentalHistory(rentalHistory)}
-
           </div>
           <section className="resume__section incomplete">
             <h2 className="resume__subtitle incomplete__subtitle">
@@ -162,13 +173,13 @@ class Preview extends Component {
             </ul>
           </section>
         </div>
-      </section>
-    );
+      </section>;
   }
 }
 
 Preview.propTypes = {
   people: PropTypes.array,
+  income: PropTypes.string,
   summary: PropTypes.string,
   employmentHistory: PropTypes.array,
   rentalHistory: PropTypes.array,

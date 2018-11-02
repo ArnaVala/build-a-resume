@@ -135,7 +135,7 @@ class RentalHistory extends Component {
           <div className="page__header__container">
             <h1 className="page__title">Rental History</h1>
             <p className="page__subtitle">
-              Now please list your most recent places of residence. 2 to 3 places is sufficient and no further than 10 years back.
+              Now please list your most recent places of residence. 2 to 3 places are sufficient and no further than 10 years back.
             </p>
             <button className="btn--header" onClick={toggleHeader}>
               <span />
