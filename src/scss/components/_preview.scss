@@ -113,12 +113,12 @@
 
 // Incomplete Sections
 .incomplete {
-  border-top: 1px dashed darken($secondary, 15%);
+  border-top: 1px dashed lighten($base, 40%);
   background: $secondary;
   padding: 2em 1em;
   display: none;
   @include bp(medium) {
-    padding: 2.5em 2em;
+    padding: 3em;
     width: 100%;
   }
 }
@@ -129,8 +129,8 @@
 
 .incomplete__subtitle {
   margin-bottom: 1em;
-  font-weight: bold;
-  color: darken($secondary, 25%);
+  font-weight: 500;
+  color: lighten($base, 40%);
   display: none;
 }
 
@@ -159,18 +159,16 @@
 }
 
 .incomplete a {
-  background: darken($secondary, 5%);
-  color: darken($secondary, 25%) !important;
+  font-family: $code;
+  font-size: 14px;
+  font-weight: 300;
+  background: lighten($base, 40%);
+  color: $secondary;
   border-radius: 2em;
   text-decoration: none;
-  padding: 0.5em 1em;
-  display: inline-block;
-  float: left;
+  padding: 0.6em 1.2em;
+  display: flex;
   margin: 0 0.5em 0.5em 0;
-
-  @include bp(medium) {
-    text-align: center;
-  }
 }
 
 .no-touchevents .incomplete a:hover {

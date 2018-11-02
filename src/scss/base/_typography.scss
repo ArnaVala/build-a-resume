@@ -8,12 +8,16 @@ html, body, input, textarea, select, button, option, textarea  {
 
 body, p, input, textarea, select, button, option, textarea  {
 	font-family: $body;
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 	color: $base;
 	letter-spacing: 0.01em;
 }
 
+::selection {
+	background-color: $highlight;
+	color: $white;
+}
 
 /*** HEADINGS ***/
 
@@ -21,4 +25,5 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.4;
 	font-family: $body;
 }
+
 

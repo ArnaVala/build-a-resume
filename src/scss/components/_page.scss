@@ -8,11 +8,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
   margin-left: auto;
   text-align: center;
 
   @include bp(medium) {
-    width: 75vw;
+    width: 66.66vw;
   }
 
   &__header {
@@ -21,12 +22,14 @@
     margin-top: 50px;
     background: $secondary;
     text-align: center;
+    
 
     &__container {
-      padding: 2em 1em;
+      padding: 2em 0 0em;
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 480px;
       text-align: center;
+      width: 94vw;
     }
 
     @include bp(medium) {
@@ -37,19 +40,23 @@
   &__title {
     width: 100%;
     z-index: 99;
-    bottom: -0.5em;
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: 600;
     line-height: 1.2;
+    @include bp(medium) {
+      margin-top: 0.5em;
+      font-size: 2.8em;
+    }
   }
 
   &__subtitle {
     line-height: 1.4;
-    padding-top: 1.5em;
+    padding: 1.5em 0em 1em 0;
     max-height: 0;
     opacity: 0;
     transform: translateY(20px);
-    color: darken($secondary, 50%);
+    color: $grey;
+  
   }
 
   //Link on bottom of every page
@@ -63,16 +70,21 @@
     border-radius: 2em;
     padding: 1em 2em;
     position: absolute;
-    bottom: 4em;
-    right: 4em;
+    bottom: 1.5em;
+    right: 1.5em;
     box-shadow: 1px 4px 12px rgba($base, 0.2);
+
+    @include bp(medium) {
+      bottom: 3em;
+      right: 3em;
+    }
   }
 }
 
 .btn--header--active .page__subtitle {
   opacity: 1;
-  max-height: 100px;
   height: auto;
+  max-height: 320px;
   transform: translateY(0);
 }
 

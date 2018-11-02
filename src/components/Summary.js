@@ -26,7 +26,7 @@ function Summary({ summary, onInputChange, toggleHeader }) {
           onChange={event => onInputChange(event.target.value, ["summary"])}
         />
         <Link
-          to="/employment-history"
+          to="/employmenthistory"
           title="Employment History"
           className="page__link"
         >
