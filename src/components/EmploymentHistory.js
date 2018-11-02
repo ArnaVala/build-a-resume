@@ -111,7 +111,7 @@ class EmploymentHistory extends Component {
             </button>
           </ol>
           <Link
-            to="/rental-history"
+            to="/rentalhistory"
             title="Rental History"
             className="page__link"
           >

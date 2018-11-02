@@ -70,10 +70,44 @@ class Preview extends Component {
     );
   };
 
+  renderRentalHistory = rentalHistory => {
+    return (
+      <section className="resume__section resume__section--rental">
+        <h2 className="resume__subtitle">Rental History</h2>
+        <ul className="rental-list">
+          {rentalHistory.map((rental, i) => {
+            if (
+              !rental.address1 ||
+              !rental.zip ||
+              !rental.city ||
+              !rental.startDate ||
+              !rental.endDate ||
+              !rental.reason
+            ) {
+              missingSection("rental-history");
+              return null;
+            }
+
+            return (
+              <li className="apartment" key={i}>
+                {`${rental.address1} ${rental.address2}, ${rental.zip} ${rental.city}`}
+                <br />
+                {` (${rental.startDate} - ${rental.endDate})`}
+                <br />
+                <em>Reason For Leaving:</em> {rental.reason}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    );
+  };
+
   render() {
     const { people,
             summary,
-            employmentHistory
+            employmentHistory,
+            rentalHistory
           } = this.props;
     return (
       <section className="page">
@@ -99,6 +133,8 @@ class Preview extends Component {
 
             {this.renderEmploymentHistory(employmentHistory)}
 
+            {this.renderRentalHistory(rentalHistory)}
+
           </div>
           <section className="resume__section incomplete">
             <h2 className="resume__subtitle incomplete__subtitle">
@@ -115,7 +151,7 @@ class Preview extends Component {
                 <Link to="/employmenthistory">Employment History</Link>
               </li>
               <li className="incomplete__link incomplete__link--rental-history">
-                <Link to="/rentalhistory">Rental History</Link>
+                <Link to="/rental-history">Rental History</Link>
               </li>
               <li className="incomplete__link incomplete__link--income">
                 <Link to="/income">Income</Link>
@@ -135,6 +171,7 @@ Preview.propTypes = {
   people: PropTypes.array,
   summary: PropTypes.string,
   employmentHistory: PropTypes.array,
+  rentalHistory: PropTypes.array,
   printResume: PropTypes.func
 };
 
