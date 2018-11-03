@@ -68,7 +68,7 @@ function Header({ toggleMenu, closeMenu }) {
           </li>
           <li>
             <NavLink
-              to="/"
+              to="/income"
               title="Income"
               className="btn--nav"
               activeClassName="btn--nav--active"
