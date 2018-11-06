@@ -12,7 +12,7 @@ function About() {
         <li>
           <span className="faq__question">What is Renters Resume?</span>
           <p>
-          This is a simple SPA made in React. Renters Resume is a personal project made as proof of concept and for learning purposes. Landing page illustration and built by {" "} <Link to="https://github.com/arnavala/" target="_blank" rel="noopener noreferrer">
+          This is a simple SPA made in React. Renters Resume is a personal project made as proof of concept and for learning purposes. Built by {" "} <Link to="https://github.com/arnavala/" target="_blank" rel="noopener noreferrer">
               Arna Vala.
             </Link>
           </p>

@@ -74,22 +74,11 @@ function Header({ toggleMenu, closeMenu }) {
               activeClassName="btn--nav--active"
               onClick={closeMenu}
             >
-              <span className="btn--nav__lines" />
+              <span className="btn--nav__lines btn--nav__lines--last" />
               Income
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/"
-              title="References"
-              className="btn--nav"
-              activeClassName="btn--nav--active"
-              onClick={closeMenu}
-            >
-              <span className="btn--nav__lines btn--nav__lines--last" />
-              References
-            </NavLink>
-          </li>
+          
           <li>
             <NavLink
               to="/preview"
@@ -103,7 +92,6 @@ function Header({ toggleMenu, closeMenu }) {
               Preview
             </NavLink>
           </li>
-
         </ul>
       </nav>
     </header>

@@ -15,8 +15,6 @@ import Preview from "./Preview";
 import RentalHistory from "./RentalHistory";
 import Summary from "./Summary";
 
-
-
 const defaultState = {
   people: [
     {
@@ -61,7 +59,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    store.set('data', this.state);
+    store.set("data", this.state);
   }
 
   onInputChange = (value, key) => {
@@ -103,54 +101,112 @@ class App extends Component {
   }
 
   printResume = () => {
-    const app = document.getElementById('app');
-    if (this.props.location.pathname !== '/preview') {
-      this.context.router.push('/preview');
+    const app = document.getElementById("app");
+    if (this.props.location.pathname !== "/preview") {
+      this.context.router.push("/preview");
       setTimeout(() => {
-        app.classList.remove('toggle--active');
+        app.classList.remove("toggle--active");
         window.print();
       }, 500);
     } else {
-      app.classList.remove('toggle--active');
+      app.classList.remove("toggle--active");
       window.print();
     }
   };
 
+  generateResume = event => {
+    event.preventDefault();
+    console.log(
+      `${window.location.href}/?data=${encodeURIComponent(JSON.stringify(this.state)
+      )}`
+    );
+  };
+
+
   render() {
-    return <div>
-        {this.props.location.pathname !== "/" ? <Header {...this.props} printResume={this.printResume} toggleMenu={this.toggleMenu} closeMenu={this.closeMenu} /> : null}
+    return (
+      <div>
+        {this.props.location.pathname !== "/" ? (
+          <Header
+            {...this.props}
+            generateResume={this.generateResume}
+            printResume={this.printResume}
+            toggleMenu={this.toggleMenu}
+            closeMenu={this.closeMenu}
+          />
+        ) : null}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about">
-            <About {...this.props} toggleHeader={this.toggleHeader} closeMenu={this.closeMenu} />
+            <About
+              {...this.props}
+              toggleHeader={this.toggleHeader}
+              closeMenu={this.closeMenu}
+            />
           </Route>
           <Route path="/applicant">
-            <Applicant {...this.props} people={this.state.people} onInputChange={this.onInputChange} onAddSection={this.onAddSection} onRemoveSection={this.onRemoveSection} toggleHeader={this.toggleHeader} />
+            <Applicant
+              {...this.props}
+              people={this.state.people}
+              onInputChange={this.onInputChange}
+              onAddSection={this.onAddSection}
+              onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
           </Route>
           <Route path="/summary">
-            <Summary {...this.props} summary={this.state.summary} onInputChange={this.onInputChange} toggleHeader={this.toggleHeader} />
+            <Summary
+              {...this.props}
+              summary={this.state.summary}
+              onInputChange={this.onInputChange}
+              toggleHeader={this.toggleHeader}
+            />
           </Route>
           <Route path="/employmenthistory">
-            <EmploymentHistory {...this.props} employmentHistory={this.state.employmentHistory} onInputChange={this.onInputChange} onAddSection={this.onAddSection} onRemoveSection={this.onRemoveSection} toggleHeader={this.toggleHeader} />
+            <EmploymentHistory
+              {...this.props}
+              employmentHistory={this.state.employmentHistory}
+              onInputChange={this.onInputChange}
+              onAddSection={this.onAddSection}
+              onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
           </Route>
           <Route path="/rentalhistory">
-            <RentalHistory {...this.props} rentalHistory={this.state.rentalHistory} onInputChange={this.onInputChange} onAddSection={this.onAddSection} onRemoveSection={this.onRemoveSection} toggleHeader={this.toggleHeader} />
+            <RentalHistory
+              {...this.props}
+              rentalHistory={this.state.rentalHistory}
+              onInputChange={this.onInputChange}
+              onAddSection={this.onAddSection}
+              onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
           </Route>
-        <Route path="/income">
-          <Income
-            {...this.props}
-            income={this.state.income}
-            onInputChange={this.onInputChange}
-            onAddSection={this.onAddSection}
-            onRemoveSection={this.onRemoveSection}
-            toggleHeader={this.toggleHeader}
-          />
-        </Route>
+          <Route path="/income">
+            <Income
+              {...this.props}
+              income={this.state.income}
+              onInputChange={this.onInputChange}
+              onAddSection={this.onAddSection}
+              onRemoveSection={this.onRemoveSection}
+              toggleHeader={this.toggleHeader}
+            />
+          </Route>
           <Route path="/preview">
-            <Preview {...this.props} people={this.state.people} summary={this.state.summary} employmentHistory={this.state.employmentHistory} rentalHistory={this.state.rentalHistory} toggleHeader={this.toggleHeader} />
+            <Preview
+              {...this.props}
+              people={this.state.people}
+              summary={this.state.summary}
+              employmentHistory={this.state.employmentHistory}
+              rentalHistory={this.state.rentalHistory}
+              income={this.state.income}
+              toggleHeader={this.toggleHeader}
+              printResume={this.printResume}
+            />
           </Route>
         </Switch>
-      </div>;
+      </div>
+    );
   }
 }
 
