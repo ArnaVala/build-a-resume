@@ -1,6 +1,6 @@
 
-# [RResume](https://renters-resume.netlify.app/)
-A simple ReactJS single page application where you can make a resume and print it out for a rental application - a personal learning project in ReactJS.
+## [RResume](https://renters-resume.netlify.app/) - a personal learning project in ReactJS.
+A simple ReactJS single page application where you can make a resume and print it out for a rental application - 
 
 
 ## Setting up the development environment
